@@ -1,0 +1,137 @@
+/* ===== Tokens ===== */
+:root {
+  --ink: #16181d;
+  --blue: #f9960b;
+  --blue-dark: #ec710c;
+  --orange: #ff7a1a;
+  --steel: #e9ecef;
+  --paper: #f5f6f8;
+  --card: #ffffff;
+  --line: #d4d8de;
+  --alert: #c8372d;
+  --radius: 10px;
+  --font-head: "Barlow Condensed", system-ui, sans-serif;
+  --font-body: "Barlow", system-ui, sans-serif;
+}
+
+/* ===== Base (mobile first) ===== */
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  margin: 0;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  color: var(--ink);
+  background: var(--paper);
+}
+h1, h2, h3 { font-family: var(--font-head); line-height: 1.1; margin: 0 0 .6rem; }
+h1 { font-size: 2.2rem; font-weight: 800; }
+h2 { font-size: 1.7rem; font-weight: 800; }
+h3 { font-size: 1.3rem; font-weight: 600; }
+a { color: var(--blue); }
+:focus-visible { outline: 3px solid var(--orange); outline-offset: 2px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* ===== Header y navegación (Flexbox) ===== */
+.site-header { display: flex; flex-direction: column; gap: .6rem; padding: .8rem 1rem; background: var(--ink); color: #fff; }
+.brand { display: flex; align-items: center; gap: .6rem; color: #fff; text-decoration: none; font: 800 1.6rem var(--font-head); }
+.nav-list { display: flex; flex-wrap: wrap; gap: .4rem; list-style: none; margin: 0; padding: 0; }
+.nav-list a { display: flex; align-items: center; gap: .35rem; padding: .4rem .75rem; border-radius: 999px; color: #fff; text-decoration: none; }
+.nav-list a:hover { background: var(--blue); }
+
+/* ===== Macro-estructura (Grid) ===== */
+.page { display: grid; grid-template-columns: 1fr; gap: 1.25rem; width: 100%; max-width: 1200px; margin: 0 auto; padding: 1.25rem 1rem 2rem; }
+.panel { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.1rem; }
+
+/* ===== Hero ===== */
+.hero { display: grid; gap: 1.2rem; align-items: center; padding: .5rem 0; }
+.hero-text p { max-width: 55ch; }
+.hero-art { margin: 0; }
+.hero-art svg { width: 100%; height: auto; max-height: 240px; }
+
+/* ===== Botones ===== */
+.btn { display: inline-flex; align-items: center; gap: .45rem; padding: .65rem 1.1rem; border: 2px solid var(--orange); border-radius: var(--radius); background: var(--orange); color: var(--ink); font: 600 1rem var(--font-body); text-decoration: none; cursor: pointer; }
+.btn:hover { background: #ee6a0a; border-color: #ee6a0a; }
+.btn-ghost { background: transparent; border-color: var(--blue); color: var(--blue); }
+.btn-ghost:hover { background: var(--blue); border-color: var(--blue); color: #fff; }
+
+/* ===== Barra de herramientas (Flexbox) ===== */
+.toolbar { display: flex; flex-direction: column; gap: .6rem; margin-bottom: 1rem; }
+
+/* ===== Tarjetas (Grid fuera, Flexbox dentro) ===== */
+.cards { display: grid; grid-template-columns: 1fr; gap: .9rem; }
+.card { display: flex; flex-direction: column; gap: .3rem; padding: .9rem; border: 1px solid var(--line); border-left: 6px solid var(--blue); border-radius: var(--radius); }
+.card header { display: flex; justify-content: space-between; align-items: flex-start; gap: .5rem; }
+.card h3 { margin: 0; }
+.tag { padding: .1rem .6rem; border-radius: 999px; background: var(--steel); font-size: .88rem; white-space: nowrap; }
+.meta, .spots { margin: 0; }
+.meta { color: #4b525c; }
+.spots { margin-top: auto; padding-top: .3rem; font-weight: 600; color: var(--blue-dark); }
+.spots.low { color: var(--alert); }
+
+/* ===== Formulario ===== */
+.form-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+fieldset { margin: 0; padding: .9rem; border: 1px solid var(--line); border-radius: var(--radius); display: flex; flex-direction: column; gap: .75rem; }
+legend { padding: 0 .4rem; font: 800 1.2rem var(--font-head); color: var(--blue); }
+label { display: flex; flex-direction: column; gap: .25rem; font-weight: 600; font-size: .95rem; }
+label.check { flex-direction: row; align-items: flex-start; gap: .5rem; font-weight: 400; }
+label.check input { width: auto; margin-top: .25rem; }
+input, select, textarea { width: 100%; padding: .6rem .7rem; border: 2px solid var(--line); border-radius: 8px; font: 400 1rem var(--font-body); color: var(--ink); background: #fff; }
+input:focus, select:focus, textarea:focus { border-color: var(--blue); outline: none; }
+input:user-invalid, select:user-invalid { border-color: var(--alert); }
+input:user-valid, select:user-valid { border-color: #2e8b57; }
+.form-actions { display: flex; flex-wrap: wrap; gap: .6rem; }
+
+/* ===== Aside de avisos ===== */
+.alerts { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .6rem; }
+.alerts li { display: flex; gap: .6rem; padding: .6rem .75rem; border-radius: 8px; background: var(--steel); border-left: 5px solid var(--orange); }
+.alerts i { color: var(--blue); }
+
+/* ===== Footer ===== */
+.site-footer { padding: 1.2rem 1rem; text-align: center; background: var(--ink); color: #dfe3e8; }
+.site-footer p { margin: .2rem 0; }
+
+/* ===== Breakpoint 1: tablet (>= 640px) ===== */
+@media (min-width: 640px) {
+  h1 { font-size: 3rem; }
+  .site-header { flex-direction: row; justify-content: space-between; align-items: center; padding: .8rem 1.5rem; }
+  .toolbar { flex-direction: row; }
+  .toolbar .field-inline:first-child { flex: 1; }
+  .cards { grid-template-columns: repeat(2, 1fr); }
+  .hero { grid-template-columns: 1.2fr 1fr; }
+  .form-grid { grid-template-columns: 1fr 1fr; }
+  .form-actions { grid-column: 1 / -1; }
+}
+
+/* ===== Breakpoint 2: escritorio (>= 960px) ===== */
+@media (min-width: 960px) {
+  .page {
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas:
+      "hero hero"
+      "cla  side"
+      "ins  ins";
+    padding: 2rem 1.5rem 3rem;
+  }
+ .hero-art img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 320px;
+  object-fit: cover;
+  object-position: center 30%;
+  border-radius: var(--radius);
+} }
+
+
+/* ===== Breakpoint 3: pantallas grandes (>= 1280px) ===== */
+@media (min-width: 1280px) {
+  body { font-size: 1.125rem; }
+  .page { max-width: 1320px; gap: 1.75rem; }
+  .cards { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }

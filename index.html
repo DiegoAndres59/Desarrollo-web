@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Fuerza Sinú: gestión de socios, planes y clases para tu gimnasio. Inscribe socios, controla membresías y reserva cupos.">
+  <title>Tu FavGym | Gestión de gimnasio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&family=Barlow:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="Tu FavGym, ir al inicio">
+      <svg width="36" height="36" viewBox="0 0 36 36" aria-hidden="true">
+        <rect width="36" height="36" rx="8" fill="#ff7a1a"/>
+        <rect x="6" y="15" width="4" height="6" fill="#16181d"/>
+        <rect x="26" y="15" width="4" height="6" fill="#16181d"/>
+        <rect x="11" y="12" width="4" height="12" fill="#16181d"/>
+        <rect x="21" y="12" width="4" height="12" fill="#16181d"/>
+        <rect x="15" y="16.5" width="6" height="3" fill="#16181d"/>
+      </svg>
+      <span>TuFavGym</span>
+    </a>
+    <nav aria-label="Principal">
+      <ul class="nav-list">
+        <li><a href="#inicio"><i class="bi bi-house" aria-hidden="true"></i> Inicio</a></li>
+        <li><a href="#clases"><i class="bi bi-calendar-week" aria-hidden="true"></i> Clases</a></li>
+        <li><a href="#inscripcion"><i class="bi bi-person-plus" aria-hidden="true"></i> Inscribir socio</a></li>
+        <li><a href="#avisos"><i class="bi bi-bell" aria-hidden="true"></i> Avisos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section id="inicio" class="hero">
+      <div class="hero-text">
+        <h1>Tu gimnasio en orden: socios, planes y clases en un solo lugar</h1>
+        <p>Inscribe nuevos socios, revisa quién tiene la membresía por vencer y mira cuántos cupos quedan en cada clase.</p>
+        <a class="btn" href="#inscripcion"><i class="bi bi-person-plus" aria-hidden="true"></i> Inscribir un socio</a>
+      </div>
+      <figure class="hero-art">
+ <figure class="hero-art">
+  <img src="https://i.blogs.es/410bab/danielle-cerullo-cqfnt66ttzm-unsplash/1366_2000.jpeg"
+       alt="Persona entrenando en el gimnasio"
+       width="600" height="400">
+</figure>
+    </section>
+
+    <section id="clases" class="panel" aria-labelledby="t-clases">
+      <h2 id="t-clases">Clases de la semana</h2>
+      <form class="toolbar" role="search" action="#">
+        <label class="field-inline">
+          <span class="sr-only">Buscar clase</span>
+          <input type="search" name="q" placeholder="Buscar clase o instructor" maxlength="60">
+        </label>
+        <label class="field-inline">
+          <span class="sr-only">Filtrar por turno</span>
+          <select name="turno">
+            <option value="">Todos los turnos</option>
+            <option>Mañana</option>
+            <option>Tarde</option>
+            <option>Noche</option>
+          </select>
+        </label>
+        <button class="btn btn-ghost" type="submit"><i class="bi bi-funnel" aria-hidden="true"></i> Filtrar</button>
+      </form>
+
+      <div class="cards">
+        <article class="card">
+          <header>
+            <h3>Spinning</h3>
+            <span class="tag">Mañana</span>
+          </header>
+          <p class="meta"><i class="bi bi-person" aria-hidden="true"></i> Instructora Laura Pérez</p>
+          <p class="meta"><i class="bi bi-clock" aria-hidden="true"></i> Lunes y miércoles, 6:00 a. m.</p>
+          <p class="spots"><i class="bi bi-people" aria-hidden="true"></i> 8 cupos libres</p>
+        </article>
+        <article class="card">
+          <header>
+            <h3>Funcional</h3>
+            <span class="tag">Tarde</span>
+          </header>
+          <p class="meta"><i class="bi bi-person" aria-hidden="true"></i> Instructor Carlos Díaz</p>
+          <p class="meta"><i class="bi bi-clock" aria-hidden="true"></i> Martes y jueves, 5:00 p. m.</p>
+          <p class="spots low"><i class="bi bi-exclamation-triangle" aria-hidden="true"></i> 2 cupos libres</p>
+        </article>
+        <article class="card">
+          <header>
+            <h3>Yoga</h3>
+            <span class="tag">Noche</span>
+          </header>
+          <p class="meta"><i class="bi bi-person" aria-hidden="true"></i> Instructora Marta Ruiz</p>
+          <p class="meta"><i class="bi bi-clock" aria-hidden="true"></i> Viernes, 7:00 p. m.</p>
+          <p class="spots"><i class="bi bi-people" aria-hidden="true"></i> 12 cupos libres</p>
+        </article>
+        <article class="card">
+          <header>
+            <h3>Pesas guiadas</h3>
+            <span class="tag">Mañana</span>
+          </header>
+          <p class="meta"><i class="bi bi-person" aria-hidden="true"></i> Instructor Andrés Mora</p>
+          <p class="meta"><i class="bi bi-clock" aria-hidden="true"></i> Sábado, 8:00 a. m.</p>
+          <p class="spots low"><i class="bi bi-exclamation-triangle" aria-hidden="true"></i> 3 cupos libres</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="inscripcion" class="panel" aria-labelledby="t-inscripcion">
+      <h2 id="t-inscripcion">Inscríbete</h2>
+      <form class="form-grid" action="#" method="post">
+        <fieldset>
+          <legend>Datos personales</legend>
+          <label>Nombre completo
+            <input type="text" name="nombre" required minlength="5" maxlength="80" placeholder="Ej. Juan Pérez Gómez">
+          </label>
+          <label>Documento de identidad
+            <input type="text" name="documento" required pattern="[0-9]{6,10}" inputmode="numeric" placeholder="1067890123" title="Entre 6 y 10 dígitos, sin puntos">
+          </label>
+          <label>Fecha de nacimiento
+            <input type="date" name="nacimiento" required min="1940-01-01" max="2008-10-23">
+          </label>
+          <label>Correo
+            <input type="email" name="correo" required placeholder="juan@correo.com">
+          </label>
+          <label>Celular
+            <input type="tel" name="celular" required pattern="3[0-9]{9}" placeholder="3001234567" title="Celular colombiano de 10 dígitos que empieza en 3">
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Plan y metas</legend>
+          <label>Plan
+            <select name="plan" required>
+              <option value="">Selecciona un plan</option>
+              <option>Mensual · $90.000</option>
+              <option>Trimestral · $240.000</option>
+              <option>Anual · $850.000</option>
+            </select>
+          </label>
+          <label>Fecha de inicio
+            <input type="date" name="inicio" required min="2026-10-23">
+          </label>
+          <label>Peso (kg)
+            <input type="number" name="peso" required min="30" max="250" step="0.5" placeholder="70">
+          </label>
+          <label>Estatura (cm)
+            <input type="number" name="estatura" required min="120" max="230" placeholder="170">
+          </label>
+          <label>Objetivo
+            <select name="objetivo" required>
+              <option value="">Selecciona uno</option>
+              <option>Bajar de peso</option>
+              <option>Ganar músculo</option>
+              <option>Mejorar resistencia</option>
+              <option>Mantenerme activo</option>
+            </select>
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Emergencia y salud</legend>
+          <label>Contacto de emergencia
+            <input type="text" name="emergencia" required minlength="5" maxlength="60" placeholder="Nombre y parentesco">
+          </label>
+          <label>Celular de emergencia
+            <input type="tel" name="cel_emergencia" required pattern="3[0-9]{9}" placeholder="3009876543" title="Celular colombiano de 10 dígitos que empieza en 3">
+          </label>
+          <label>Condiciones médicas
+            <textarea name="salud" rows="3" maxlength="200" placeholder="Opcional: lesiones, alergias, medicamentos"></textarea>
+          </label>
+          <label class="check">
+            <input type="checkbox" name="acepto" required>
+            Declaro que estoy en condiciones de hacer ejercicio
+          </label>
+        </fieldset>
+
+        <div class="form-actions">
+          <button class="btn" type="submit"><i class="bi bi-check2-circle" aria-hidden="true"></i> Inscribir socio</button>
+          <button class="btn btn-ghost" type="reset">Limpiar</button>
+        </div>
+      </form>
+    </section>
+
+
+    <footer class="site-footer">
+        <p>© 2026 Tu FavGym. Todos los derechos reservados.</p>
